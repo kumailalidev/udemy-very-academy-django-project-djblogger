@@ -1,0 +1,1 @@
+# **Udemy-Django Project: djBlogger, Very Academy**
