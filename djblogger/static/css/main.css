@@ -11,3 +11,12 @@
     font-family: 'Barlow', sans-serif;
     font-family: 'Merriweather', serif;
 }
+
+html,
+body {
+    font-family: 'Barlow', sans-serif;
+}
+
+.fw-500 {
+    font-weight: 500;
+}
