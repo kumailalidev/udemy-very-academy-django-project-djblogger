@@ -8,8 +8,8 @@ class Post(models.Model):
     """
 
     options = (
-        {"draft", "Draft"},
-        {"published", "Published"},
+        ("draft", "Draft"),
+        ("published", "Published"),
     )
 
     title = models.CharField(max_length=250)
