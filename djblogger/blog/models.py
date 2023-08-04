@@ -24,7 +24,7 @@ class Post(models.Model):
     status = models.CharField(max_length=10, choices=options, default="draft")
 
     class Meta:
-        ordering = "-created_at"
+        ordering = ("-created_at",)
 
     def __str__(self):
         return self.name
