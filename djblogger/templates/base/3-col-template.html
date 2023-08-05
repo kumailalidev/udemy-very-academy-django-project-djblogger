@@ -1,0 +1,13 @@
+{% extends "./base.html" %}
+
+{% block template %}
+
+<div class="container" style="max-width: 1500px !important">
+  <div class="row">
+    <div class="">{% block content-left %}{% endblock %}</div>
+    <div class="">{% block content-mid %}{% endblock %}</div>
+    <div class="">{% block content-right %}{% endblock %}</div>
+  </div>
+</div>
+
+{% endblock %}
