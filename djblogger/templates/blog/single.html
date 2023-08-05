@@ -1,15 +1,24 @@
 {% extends "../base/3-col-template.html" %}
 
 {% block content-left %}
-    {% include "base/secondary-navbar.html" %}
+{% include "base/secondary-navbar.html" %}
 {% endblock %}
 
 {% block content-mid %}
-<div>{{ post.author }}</div>
-<div>{{ post.updated_at|date:"M d" }}</div>
-<h1>{{ post.title }}</h1>
-<h2>{{ post.subtitle }}</h2>
-{{ post.content }}
+
+<style>
+    .blogger h1 {
+        letter-spacing: -0.6px;
+    }
+</style>
+
+<div class="blogger center mx-auto" style="max-width: 683px;">
+    <div class="text-muted">{{ post.author }}</div>
+    <div class="text-muted">{{ post.updated_at|date:"M d" }}</div>
+    <h1 class="fw-blod">{{ post.title }}</h1>
+    <h2 class="text-muted fs-4 pb-4">{{ post.subtitle }}</h2>
+    {{ post.content }}
+</div>
 {% endblock %}
 
 {% block content-right %}
