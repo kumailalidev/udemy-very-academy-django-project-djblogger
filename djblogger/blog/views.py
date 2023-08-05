@@ -1,4 +1,5 @@
-from typing import List
+from typing import Any, List
+from django.db.models.query import QuerySet
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
 from .models import Post
@@ -30,6 +31,12 @@ class TagListView(ListView):
     model = Post
     paginate_by = 10
     context_object_name = "posts"
+
+    def get_queryset(self):
+        x = Post.objects.filter(tags__name__in=[self.kwargs["tag"]])
+        print(x)
+
+        return x
 
     def get_template_names(self):
         return "blog/tags.html"
