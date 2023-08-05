@@ -21,6 +21,11 @@ body {
   font-weight: 500;
 }
 
+.fs-12 {
+  font-size: 0.75rem;
+}
+
+
 .fs-14 {
   font-size: 0.875rem;
 }
