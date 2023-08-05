@@ -1,3 +1,4 @@
+from typing import List
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
 from .models import Post
@@ -23,3 +24,12 @@ def post_single(request, post):
     post = get_object_or_404(Post, slug=post, status="published")
     related = Post.objects.filter(author=post.author)[:5]
     return render(request, "blog/single.html", {"post": post, "related": related})
+
+
+class TagListView(ListView):
+    model = Post
+    paginate_by = 10
+    context_object_name = "posts"
+
+    def get_template_names(self):
+        return "blog/tags.html"
