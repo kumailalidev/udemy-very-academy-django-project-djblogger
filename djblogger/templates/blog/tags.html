@@ -6,10 +6,10 @@
 
 {% block content-mid %}
 
-{% for post in posts %}
-<div>{{ post.title }}</div>
-{% endfor %}
-
+<div class="center" style="max-width: 683px;">
+    <h1 class="fs-1 fw-bold pb-5">{{ tag|title }}</h1>
+</div>
+{% include "blog/components/post-list-elements-tags.html" %}
 {% endblock %}
 
 {% block content-right %}
