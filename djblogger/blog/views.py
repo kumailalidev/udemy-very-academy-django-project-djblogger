@@ -2,6 +2,8 @@ from typing import Any, Dict, List
 from django.db.models.query import QuerySet
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
+
+from .forms import PostSearchForm
 from .models import Post
 
 
@@ -51,6 +53,12 @@ class PostSearchView(ListView):
     model = Post
     paginate_by = 10
     context_object_name = "posts"
+    form_class = PostSearchForm
+
+    def get_queryset(self):
+        form = self.form_class(self.request.GET)
+        print(form)
+        return []
 
     def get_template_names(self):
         return "blog/search.html"
