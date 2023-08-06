@@ -2,8 +2,8 @@ from django import forms
 
 
 class PostSearchForm(forms.Form):
-    searchfield = forms.CharField()
+    q = forms.CharField()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["searchfield"].widget.attrs.update({"class": "form-control"})
+        self.fields["q"].widget.attrs.update({"class": "form-control"})
