@@ -45,3 +45,12 @@ class TagListView(ListView):
         context["tag"] = self.kwargs["tag"]
 
         return context
+
+
+class PostSearchView(ListView):
+    model = Post
+    paginate_by = 10
+    context_object_name = "posts"
+
+    def get_template_names(self):
+        return "blog/search.html"
