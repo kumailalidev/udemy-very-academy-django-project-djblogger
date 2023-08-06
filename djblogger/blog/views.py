@@ -51,7 +51,7 @@ class TagListView(ListView):
 
 class PostSearchView(ListView):
     model = Post
-    paginate_by = 10
+    paginate_by = 5
     context_object_name = "posts"
     form_class = PostSearchForm
 
@@ -62,4 +62,6 @@ class PostSearchView(ListView):
         return []
 
     def get_template_names(self):
+        if self.request.htmx:
+            return "blog/components/post-list-elements-search.html"
         return "blog/search.html"
