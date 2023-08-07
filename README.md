@@ -1,1 +1,1 @@
-# **Udemy-Django Project: djBlogger, Very Academy**
+# 🎓 **Django Project: djBlogger**
