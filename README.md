@@ -31,3 +31,8 @@ python manage.py shell
 ```bash
 python manage.py runserver
 ```
+
+## **Images**
+| Homepage                                              | Tags Page                                     |
+| ----------------------------------------------------- | --------------------------------------------- |
+| ![Homepage](images/01-djblogger-homepage.png 'Homepage') | ![Tags Page](images/02-djblogger-tags-view.png 'Tags Page') |
