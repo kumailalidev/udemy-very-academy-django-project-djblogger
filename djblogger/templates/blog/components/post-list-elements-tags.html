@@ -1,42 +1,34 @@
 <style>
-  p {
-    font-family: "Merriweather";
-    line-height: 22px;
-  }
+    p {
+        font-family: "Merriweather";
+        line-height: 22px;
+    }
 </style>
-
 {% for post in posts %}
-<a href="{{ post.get_absolute_url }}" class="text-decoration-none">
-  {% if forloop.last %}
-  <div
-    class="card border-0 pb-3 pb-sm-5"
-    hx-trigger="revealed"
-    hx-get="{{ request.path }}?page={{ page_obj.number|add:1 }}"
-    hx-swap="afterend"
-  >
-  {% else %}
-  <div class="card border-0 pb-3 pb-sm-5">
-  {% endif %}
-    <div class="row">
-      <div class="col-9">
-        <div class="card-body p-0">
-          <div class="pb-2 text-body infscroll-author small">{{post.author}}</div>
-          <h1 class="mb-1 fs-4 text-body fw-bold infscroll-title">
-            {{post.title|truncatechars:80}}
-          </h1>
-          <p class="text-muted fs-14 d-none d-sm-block text-dark">
-            {{post.content|truncatechars:180}}
-          </p>
+    <a href="{{ post.get_absolute_url }}" class="text-decoration-none">
+        <div class="card border-0 pb-3 pb-sm-5"
+             {% if forloop.last %}hx-trigger="revealed" hx-get="{{ request.path }}?page={{ page_obj.number|add:1 }}" hx-swap="afterend"{% endif %}>
+            <div class="row">
+                <div class="col-9">
+                    <div class="card-body p-0">
+                        <div class="pb-2 text-body infscroll-author small">{{ post.author }}</div>
+                        <h1 class="mb-1 fs-4 text-body fw-bold infscroll-title">{{ post.title|truncatechars:80 }}</h1>
+                        <p class="text-muted fs-14 d-none d-sm-block text-dark">{{ post.content|truncatechars:180 }}</p>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <img src="https://picsum.photos/112/112"
+                         alt=""
+                         class="img-fluid float-end" />
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-3">
-        <img
-          src="https://picsum.photos/112/112"
-          alt=""
-          class="img-fluid float-end"
-        />
-      </div>
-    </div>
-  </div>
-</a>
+    </a>
 {% endfor %}
+<!--
+{% if forloop.last %}
+    <div class="card border-0 pb-3 pb-sm-5" hx-trigger="revealed" hx-get="{{ request.path }}?page={{ page_obj.number|add:1 }}" hx-swap="afterend">
+{% else %}
+    <div class="card border-0 pb-3 pb-sm-5">
+{% endif %}
+-->
