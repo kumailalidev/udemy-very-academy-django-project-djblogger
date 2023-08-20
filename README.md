@@ -1,14 +1,17 @@
 # 🎓 **Django Project: djBlogger**
 
 ## **Description**
+
 This Django blog project is part of Udemy course **Django Project: djBlogger** [↗️](https://www.udemy.com/course/django-project-djblogger/)
 
 ## **Installation Instructions**
+
 ### 1. Install required packages
 
 ```bash
-python -m pip install requirements.txt
+python -m pip install -r requirements.txt
 ```
+
 ### 2. Make migrations
 
 ```bash
@@ -33,6 +36,7 @@ python manage.py runserver
 ```
 
 ## **Images**
-| Homepage                                              | Tags Page                                     |
-| ----------------------------------------------------- | --------------------------------------------- |
-| ![Homepage](images/01-djblogger-homepage.png 'Homepage') | ![Tags Page](images/02-djblogger-tags-view.png 'Tags Page') |
+
+| Homepage                                                 | Tags Page                                                   |
+| -------------------------------------------------------- | ----------------------------------------------------------- |
+| ![Homepage](images/01-djblogger-homepage.png "Homepage") | ![Tags Page](images/02-djblogger-tags-view.png "Tags Page") |
